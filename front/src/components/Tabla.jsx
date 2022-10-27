@@ -1,27 +1,19 @@
 import axios from "axios";
 import React from "react";
-import { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch,useSelector } from "react-redux";
 import { getAllPeople, getPerson, setPage } from "../redux/action";
 import css from "./Tabla.module.css";
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
 
 const Tabla=()=>{
     const people=useSelector(state=>state.people)
-    const [speciee,setSpeciee] =useState(""); 
-    const [peo,setPeo] =useState(""); 
     const dispatch=useDispatch()
     useEffect(()=>{
         dispatch(getAllPeople())
         dispatch(setPage(1))
     },[])
-    const postSpecie=async(url)=>{
-        const data= await axios.get(url)
-        console.log(data.data.name)
-        setSpeciee(data.data.name)
-    }
+    // Al entrar a este metodo se busca en personaje en especifico enviando
+    // el nombre y asi obtener la informacion detallada
     const onClickDetail=(name)=>{
         dispatch(getPerson(name))
     }

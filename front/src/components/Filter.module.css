@@ -141,6 +141,7 @@
   position: relative;
   cursor: pointer; 
   font-size: 2vw;
+  max-height: 30vh !important;
 }
 .listChoice input[type="radio"]{
   position:absolute;
@@ -209,5 +210,6 @@ border-radius: 0;
 }
 
 .listChoice:hover .listChoiceObjects {
-max-height: 540px;
+    max-height: 50vh;
+    overflow-y: scroll;
 }

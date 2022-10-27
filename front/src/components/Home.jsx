@@ -48,7 +48,11 @@ const Home=()=>{
                 </Stack>
             : null}{//El paginado con el respectivo tamaño en base a los personajes
             }
-                  <div className={css.box} id="m1-o">
+            
+            {//El modal que se activa cuando le dan click al boton para ver los detalles del
+            //personaje 
+            }
+            <div className={css.box} id="m1-o">
                 <div className={css.modalContainer}>
                     <div className={css.modal}>
                     <h1 className={css.modalTitle}>{person.name}</h1>
